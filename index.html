@@ -1,28 +1,71 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ZingMP3 Speed — Tải nhạc MP3 128 kbps</title>
-<meta name="description" content="Công cụ tải và phát nhạc MP3 128 kbps từ các nguồn được phép sử dụng.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZingMP3Speed — Tải nhạc MP3 miễn phí, nhanh và đơn giản</title>
+<meta name="description" content="ZingMP3Speed hỗ trợ tìm link album, link bài hát và tên bài hát với giao diện đơn giản, nhanh chóng.">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="assets/style.css?v=1">
+<link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
-<header class="nav"><div class="wrap nav-in"><a class="brand" href="/"><span class="logo">Z</span><span>ZingMP3 <b>Speed</b></span></a><span class="quality">MP3 · 128 KBPS</span></div></header>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="ZingMP3Speed">
+      <span class="logo">♫</span><span>ZingMP3<b>Speed</b></span>
+    </a>
+    <span class="quality">MP3 · NHANH & ĐƠN GIẢN</span>
+  </div>
+</header>
+
 <main>
-<section class="hero"><div class="wrap hero-in">
-<div class="pill">● MP3 DOWNLOADER</div>
-<h1>Tải nhạc <span>128 kbps</span><br>nhanh & đơn giản.</h1>
-<p class="sub">Dán liên kết bài hát để lấy thông tin và đường dẫn âm thanh được cung cấp cho nội dung bạn có quyền sử dụng.</p>
-<form id="searchForm" class="search"><input id="url" type="url" required autocomplete="off" placeholder="Dán link bài hát Zing MP3..." aria-label="Zing MP3 URL"><button id="submit">LẤY LINK 128K <span>→</span></button></form>
-<p id="status" class="status"></p>
-</div></section>
-<section class="wrap result-section" id="result" hidden>
-<div class="result-card"><div class="cover"><img id="cover" alt="Ảnh bìa"></div><div class="info"><small>BÀI HÁT</small><h2 id="title">—</h2><p id="artist">—</p><div class="meta"><span>MP3</span><span>128 kbps</span></div><div class="actions"><audio id="player" controls preload="none"></audio><a id="download" class="download" href="#" download>TẢI MP3 <span>↓</span></a></div></div></div>
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="eyebrow">ZING MP3 DOWNLOADER</div>
+    <h1>Tải nhạc <span>Zing MP3</span> miễn phí,<br>nhanh & đơn giản.</h1>
+    <p class="sub">Hỗ trợ tìm link album · link bài hát · tên bài hát</p>
+    <form id="searchForm" class="search">
+      <input id="url" type="url" required autocomplete="off" placeholder="Dán link bài hát, link album..." aria-label="Link Zing MP3">
+      <button id="submit" type="submit">XÁC NHẬN <span>→</span></button>
+    </form>
+    <p id="status" class="status"></p>
+  </div>
 </section>
-<section class="wrap features"><article><b>01</b><h3>Dán liên kết</h3><p>Nhập URL bài hát từ nguồn được hỗ trợ.</p></article><article><b>02</b><h3>Lấy thông tin</h3><p>Hệ thống hiển thị tên bài, nghệ sĩ và ảnh bìa.</p></article><article><b>03</b><h3>128 kbps</h3><p>Chỉ hiển thị lựa chọn âm thanh 128 kbps.</p></article></section>
-<section class="wrap notice"><strong>Lưu ý về bản quyền</strong><p>Chỉ tải hoặc sử dụng nội dung mà bạn có quyền truy cập và xử lý. Không hỗ trợ vượt quyền VIP, DRM hoặc cơ chế kiểm soát truy cập.</p></section>
+
+<section class="wrap result-section" id="result" hidden>
+  <div class="result-card">
+    <div class="cover"><img id="cover" alt="Ảnh bìa bài hát"></div>
+    <div class="info">
+      <small>BÀI HÁT</small>
+      <h2 id="title">—</h2>
+      <p id="artist">—</p>
+      <div class="meta"><span>MP3</span><span>128 kbps</span></div>
+      <div class="actions">
+        <audio id="player" controls preload="none"></audio>
+        <a id="download" class="download" href="#" download>TẢI MP3 <span>↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap notice">
+  <div class="notice-icon">i</div>
+  <strong>Thông tin dịch vụ</strong>
+  <p>Trang web được phát triển dựa trên API của bên thứ ba. Chúng tôi không lưu trữ nội dung âm thanh và không chịu trách nhiệm về nội dung hoặc vấn đề bản quyền của các tài liệu được cung cấp. Người dùng tự chịu trách nhiệm đảm bảo quyền sử dụng đối với nội dung được truy cập hoặc tải xuống.</p>
+</section>
+
+<section class="wrap features">
+  <article><b>01</b><h3>Nhập liên kết</h3><p>Dán link bài hát hoặc album vào ô tìm kiếm.</p></article>
+  <article><b>02</b><h3>Xác nhận</h3><p>Hệ thống xử lý liên kết và lấy thông tin bài hát.</p></article>
+  <article><b>03</b><h3>Tải về</h3><p>Chọn file được cung cấp và lưu về thiết bị.</p></article>
+</section>
 </main>
-<footer><div class="wrap">© 2026 ZingMP3 Speed · MP3 128 kbps</div></footer>
-<script src="assets/app.js?v=1"></script>
-</body></html>
+
+<footer>
+  <div class="wrap footer-in">
+    <span>© 2026 ZingMP3Speed · Developed by <b>Minh Dev</b></span>
+  </div>
+</footer>
+<script src="assets/app.js?v=2"></script>
+</body>
+</html>
