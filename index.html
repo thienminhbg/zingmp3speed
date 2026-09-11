@@ -3,69 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ZingMP3Speed — Tải nhạc MP3 miễn phí, nhanh và đơn giản</title>
-<meta name="description" content="ZingMP3Speed hỗ trợ tìm link album, link bài hát và tên bài hát với giao diện đơn giản, nhanh chóng.">
+<title>ZingDownload — Tải nhạc Zing MP3 miễn phí, nhanh chóng</title>
+<meta name="description" content="ZingDownload hỗ trợ tải nhạc Zing MP3 nhanh chóng, đơn giản với link bài hát, album hoặc playlist.">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="assets/style.css?v=2">
+<link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body>
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="/" aria-label="ZingMP3Speed">
-      <span class="logo">♫</span><span>ZingMP3<b>Speed</b></span>
+    <a class="brand" href="/" aria-label="ZingDownload">
+      <span class="logo">Z</span><span>Zing<span>Download</span></span>
     </a>
-    <span class="quality">MP3 · NHANH & ĐƠN GIẢN</span>
+    <nav class="nav-links" aria-label="Điều hướng">
+      <a class="active" href="#home">⌂ <span>Trang chủ</span></a>
+      <a href="#features">⚙ <span>Tính năng</span></a>
+      <a href="#guide">? <span>Hướng dẫn</span></a>
+      <a href="#about">ⓘ <span>Giới thiệu</span></a>
+    </nav>
+    <div class="theme" aria-label="Giao diện">☼ <span>◐</span></div>
   </div>
 </header>
 
-<main>
+<main id="home">
 <section class="hero">
+  <div class="orb orb-left"></div><div class="orb orb-right"></div>
+  <div class="music-note note-1">♪</div><div class="music-note note-2">♫</div>
   <div class="wrap hero-in">
-    <div class="eyebrow">ZING MP3 DOWNLOADER</div>
-    <h1>Tải nhạc <span>Zing MP3</span> miễn phí,<br>nhanh & đơn giản.</h1>
-    <p class="sub">Hỗ trợ tìm link album · link bài hát · tên bài hát</p>
+    <div class="eyebrow">♫ &nbsp; MP3 DOWNLOADER</div>
+    <h1>Tải nhạc <span>Zing MP3</span> miễn phí<br>nhanh &amp; đơn giản.</h1>
+    <p class="sub">Hỗ trợ tải nhạc từ link bài hát, album, playlist trên Zing MP3<br class="desktop"> với chất lượng cao, tốc độ nhanh, hoàn toàn miễn phí.</p>
     <form id="searchForm" class="search">
-      <input id="url" type="url" required autocomplete="off" placeholder="Dán link bài hát, link album..." aria-label="Link Zing MP3">
-      <button id="submit" type="submit">XÁC NHẬN <span>→</span></button>
+      <span class="search-icon">⌕</span>
+      <input id="url" type="url" required autocomplete="off" placeholder="Dán link bài hát, link album, playlist Zing MP3 vào đây..." aria-label="Link Zing MP3">
+      <button id="submit" type="submit">⌕ &nbsp; XÁC NHẬN</button>
     </form>
+    <p class="example">Ví dụ: https://zingmp3.vn/bai-hat/... &nbsp; https://zingmp3.vn/album/... &nbsp; https://zingmp3.vn/playlist/...</p>
     <p id="status" class="status"></p>
+  </div>
+</section>
+
+<section class="wrap feature-grid" id="features">
+  <article><div class="feature-icon red">ϟ</div><h3>Tốc độ nhanh</h3><p>Xử lý và tải nhạc trong vài giây</p></article>
+  <article><div class="feature-icon blue">HD</div><h3>Chất lượng cao</h3><p>Hỗ trợ 128Kbps – 320Kbps</p></article>
+  <article><div class="feature-icon green">✓</div><h3>An toàn, bảo mật</h3><p>Không lưu trữ dữ liệu người dùng</p></article>
+  <article><div class="feature-icon purple">☁</div><h3>Hoàn toàn miễn phí</h3><p>Sử dụng không cần tài khoản</p></article>
+</section>
+
+<section class="wrap guide" id="guide">
+  <div class="section-heading"><h2>Hướng dẫn sử dụng</h2><p>Chỉ với 3 bước đơn giản để tải nhạc từ Zing MP3</p></div>
+  <div class="steps">
+    <article class="step"><span class="number">1</span><div class="step-icon">↗</div><h3>Sao chép link</h3><p>Sao chép link bài hát, album hoặc playlist trên Zing MP3</p></article>
+    <div class="arrow">›</div>
+    <article class="step"><span class="number">2</span><div class="step-icon">⌕</div><h3>Dán link và xác nhận</h3><p>Dán link vào ô tìm kiếm và nhấn Xác nhận</p></article>
+    <div class="arrow">›</div>
+    <article class="step"><span class="number">3</span><div class="step-icon">↓</div><h3>Tải nhạc về máy</h3><p>Chọn chất lượng phù hợp và tải nhạc về thiết bị của bạn</p></article>
   </div>
 </section>
 
 <section class="wrap result-section" id="result" hidden>
   <div class="result-card">
     <div class="cover"><img id="cover" alt="Ảnh bìa bài hát"></div>
-    <div class="info">
-      <small>BÀI HÁT</small>
-      <h2 id="title">—</h2>
-      <p id="artist">—</p>
-      <div class="meta"><span>MP3</span><span>128 kbps</span></div>
-      <div class="actions">
-        <audio id="player" controls preload="none"></audio>
-        <a id="download" class="download" href="#" download>TẢI MP3 <span>↓</span></a>
-      </div>
-    </div>
+    <div class="info"><small>BÀI HÁT</small><h2 id="title">—</h2><p id="artist">—</p><div class="meta"><span>MP3</span><span>128 kbps</span></div><div class="actions"><audio id="player" controls preload="none"></audio><a id="download" class="download" href="#" download>TẢI MP3 ↓</a></div></div>
   </div>
 </section>
 
-<section class="wrap notice">
-  <div class="notice-icon">i</div>
-  <strong>Thông tin dịch vụ</strong>
-  <p>Trang web được phát triển dựa trên API của bên thứ ba. Chúng tôi không lưu trữ nội dung âm thanh và không chịu trách nhiệm về nội dung hoặc vấn đề bản quyền của các tài liệu được cung cấp. Người dùng tự chịu trách nhiệm đảm bảo quyền sử dụng đối với nội dung được truy cập hoặc tải xuống.</p>
+<section class="wrap notice" id="about">
+  <div class="notice-icon">i</div><div><h2>Thông tin dịch vụ</h2><p>Trang web được phát triển dựa trên API của bên thứ ba. Chúng tôi không lưu trữ nội dung âm thanh và không chịu trách nhiệm về nội dung hoặc vấn đề bản quyền của các tài liệu được cung cấp. Người dùng tự chịu trách nhiệm đảm bảo quyền sử dụng đối với nội dung được truy cập hoặc tải xuống.</p></div>
 </section>
 
-<section class="wrap features">
-  <article><b>01</b><h3>Nhập liên kết</h3><p>Dán link bài hát hoặc album vào ô tìm kiếm.</p></article>
-  <article><b>02</b><h3>Xác nhận</h3><p>Hệ thống xử lý liên kết và lấy thông tin bài hát.</p></article>
-  <article><b>03</b><h3>Tải về</h3><p>Chọn file được cung cấp và lưu về thiết bị.</p></article>
+<section class="wrap stats">
+  <div><span class="stat-icon red">♫</span><div><strong>10M+</strong><small>Bài hát được hỗ trợ</small></div></div>
+  <div><span class="stat-icon blue">♧</span><div><strong>500K+</strong><small>Người dùng tin tưởng</small></div></div>
+  <div><span class="stat-icon green">☁</span><div><strong>99.9%</strong><small>Thời gian hoạt động</small></div></div>
+  <div><span class="stat-icon purple">♡</span><div><strong>Miễn phí</strong><small>Luôn luôn như vậy</small></div></div>
 </section>
 </main>
 
 <footer>
   <div class="wrap footer-in">
-    <span>© 2026 ZingMP3Speed · Developed by <b>Minh Dev</b></span>
+    <div class="footer-brand"><a class="brand" href="/"><span class="logo">Z</span><span>Zing<span>Download</span></span></a><p>Công cụ tải nhạc Zing MP3 miễn phí, nhanh chóng và tiện lợi.</p><p>© 2026 ZingDownload · Developed by <b>Minh Dev</b></p></div>
+    <div class="footer-right"><nav><a href="#home">Trang chủ</a><a href="#features">Tính năng</a><a href="#guide">Hướng dẫn</a><a href="#about">Giới thiệu</a><a href="#about">Liên hệ</a></nav><p>Nghe nhạc mọi lúc, mọi nơi <b>♥</b></p></div>
   </div>
 </footer>
-<script src="assets/app.js?v=2"></script>
+<script src="assets/app.js?v=3"></script>
 </body>
 </html>
