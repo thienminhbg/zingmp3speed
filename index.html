@@ -1,90 +1,561 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ZingDownload — Tải nhạc Zing MP3 miễn phí, nhanh chóng</title>
-<meta name="description" content="ZingDownload hỗ trợ tải nhạc Zing MP3 nhanh chóng, đơn giản với link bài hát, album hoặc playlist.">
-<meta name="robots" content="index,follow">
-<link rel="stylesheet" href="assets/style.css?v=3">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZINGDL.IO.VN - Tải nhạc Zing MP3 miễn phí</title>
+
+    <meta name="description"
+          content="ZINGDL.IO.VN - Công cụ tìm kiếm và tải nhạc Zing MP3 nhanh chóng, đơn giản và tiện lợi.">
+
+    <meta name="keywords"
+          content="ZINGDL.IO.VN, tải nhạc Zing MP3, tải MP3, download Zing MP3">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="/assets/style.css?v=20260911m">
+
+<!-- ALBUM_LAYOUT_FIX_START -->
+<style id="album-layout-fix">
+
+/* ===== KHUNG ALBUM ===== */
+
+#albumBox {
+    display: block !important;
+    width: 100% !important;
+    max-width: 1100px !important;
+    margin: 18px auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* ===== DANH SÁCH 2 CỘT ===== */
+
+#albumBox #albumList,
+#albumBox .album-list {
+    display: grid !important;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    grid-auto-flow: row !important;
+
+    gap: 8px !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: 500px !important;
+    max-height: 500px !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    padding: 7px !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+
+    background: rgba(255,255,255,.75) !important;
+
+    border: 1px solid #e5e1ef !important;
+    border-radius: 12px !important;
+}
+
+/* ===== MỖI BÀI 1 Ô RIÊNG ===== */
+
+#albumBox #albumList .album-item,
+#albumBox .album-list .album-item {
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: 46px !important;
+    min-height: 46px !important;
+    max-height: 46px !important;
+
+    margin: 0 !important;
+
+    padding: 4px 7px !important;
+
+    box-sizing: border-box !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e5e2ed !important;
+
+    border-radius: 8px !important;
+
+    box-shadow: 0 1px 4px rgba(60,40,120,.06) !important;
+
+    gap: 6px !important;
+
+    overflow: hidden !important;
+}
+
+/* ===== CHECKBOX ===== */
+
+#albumBox .album-item .album-check {
+    display: block !important;
+
+    width: 14px !important;
+    height: 14px !important;
+
+    min-width: 14px !important;
+    max-width: 14px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    flex: 0 0 14px !important;
+}
+
+/* ===== ẢNH SIÊU GỌN ===== */
+
+#albumBox .album-item .album-cover {
+    display: block !important;
+
+    width: 32px !important;
+    height: 32px !important;
+
+    min-width: 32px !important;
+    max-width: 32px !important;
+
+    min-height: 32px !important;
+    max-height: 32px !important;
+
+    flex: 0 0 32px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: cover !important;
+
+    border-radius: 5px !important;
+}
+
+/* ===== THÔNG TIN ===== */
+
+#albumBox .album-item .album-info {
+    display: block !important;
+
+    flex: 1 1 auto !important;
+
+    min-width: 0 !important;
+    max-width: none !important;
+
+    overflow: hidden !important;
+}
+
+#albumBox .album-item strong {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 11px !important;
+    line-height: 14px !important;
+
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+
+    overflow: hidden !important;
+
+    text-overflow: ellipsis !important;
+}
+
+#albumBox .album-item small {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 1px 0 0 !important;
+    padding: 0 !important;
+
+    font-size: 9px !important;
+    line-height: 11px !important;
+
+    color: #777 !important;
+
+    white-space: nowrap !important;
+
+    overflow: hidden !important;
+
+    text-overflow: ellipsis !important;
+}
+
+/* ===== DUNG LƯỢNG ===== */
+
+#albumBox .album-item .file-size {
+    display: block !important;
+
+    flex: 0 0 auto !important;
+
+    margin: 0 !important;
+
+    padding: 3px 5px !important;
+
+    background: #f0edff !important;
+
+    border-radius: 5px !important;
+
+    color: #4c2bc7 !important;
+
+    font-size: 9px !important;
+
+    line-height: 13px !important;
+
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+}
+
+/* ===== THANH CUỘN ===== */
+
+#albumBox #albumList::-webkit-scrollbar,
+#albumBox .album-list::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+#albumBox #albumList::-webkit-scrollbar-track,
+#albumBox .album-list::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+#albumBox #albumList::-webkit-scrollbar-thumb,
+#albumBox .album-list::-webkit-scrollbar-thumb {
+    background: #c7c0df !important;
+    border-radius: 10px !important;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+
+    #albumBox {
+        width: calc(100% - 16px) !important;
+    }
+
+    #albumBox #albumList,
+    #albumBox .album-list {
+        grid-template-columns: 1fr !important;
+
+        height: 460px !important;
+        max-height: 460px !important;
+    }
+
+    #albumBox .album-item {
+        height: 46px !important;
+        min-height: 46px !important;
+        max-height: 46px !important;
+    }
+
+}
+
+</style>
+<!-- ALBUM_LAYOUT_FIX_END -->
+
+
+<!-- SEO_START -->
+
+<title>ZINGDL.IO.VN - Tải MP3 miễn phí, nghe nhạc trực tuyến</title>
+
+<meta name="description"
+      content="ZINGDL.IO.VN - Công cụ tìm kiếm, nghe và tải nhạc MP3 trực tuyến. Hỗ trợ tìm bài hát, album và playlist nhanh chóng, giao diện tối ưu cho máy tính và điện thoại.">
+
+<meta name="robots"
+      content="index, follow, max-image-preview:large">
+
+<link rel="canonical"
+      href="https://zingdl.io.vn/">
+
+<meta name="author"
+      content="Minh Dev">
+
+<meta name="theme-color"
+      content="#633cff">
+
+<!-- Open Graph -->
+<meta property="og:type"
+      content="website">
+
+<meta property="og:site_name"
+      content="ZINGDL.IO.VN">
+
+<meta property="og:title"
+      content="ZINGDL.IO.VN - Tải MP3 miễn phí">
+
+<meta property="og:description"
+      content="Tìm kiếm, nghe và tải nhạc MP3 trực tuyến nhanh chóng với ZINGDL.IO.VN.">
+
+<meta property="og:url"
+      content="https://zingdl.io.vn/">
+
+<!-- Twitter -->
+<meta name="twitter:card"
+      content="summary">
+
+<meta name="twitter:title"
+      content="ZINGDL.IO.VN - Tải MP3 miễn phí">
+
+<meta name="twitter:description"
+      content="Tìm kiếm, nghe và tải nhạc MP3 trực tuyến nhanh chóng.">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ZINGDL.IO.VN",
+  "url": "https://zingdl.io.vn/",
+  "description": "Công cụ tìm kiếm, nghe và tải nhạc MP3 trực tuyến.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minh Dev"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://zingdl.io.vn/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- SEO_END -->
+
+
+    <link rel="icon" href="/favicon.ico?v=20260912" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico?v=20260912" type="image/x-icon">
+    <link rel="icon" href="/favicon-32.png?v=20260912" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-16.png?v=20260912" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260912" sizes="180x180">
+
 </head>
+
 <body>
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="/" aria-label="ZingDownload">
-      <span class="logo">Z</span><span>Zing<span>Download</span></span>
-    </a>
-    <nav class="nav-links" aria-label="Điều hướng">
-      <a class="active" href="#home">⌂ <span>Trang chủ</span></a>
-      <a href="#features">⚙ <span>Tính năng</span></a>
-      <a href="#guide">? <span>Hướng dẫn</span></a>
-      <a href="#about">ⓘ <span>Giới thiệu</span></a>
-    </nav>
-    <div class="theme" aria-label="Giao diện">☼ <span>◐</span></div>
-  </div>
+
+<header class="header">
+    <div class="header-inner">
+
+        <a href="/" class="brand">
+            <div class="brand-logo">Z</div>
+
+            <div class="brand-name">
+                <strong>ZINGDL.IO.VN</strong>
+                <span>Tải nhạc Zing MP3 miễn phí</span>
+            </div>
+        </a>
+
+        <div class="header-support">
+            <span class="headphone">♧</span>
+            <div>
+                <strong>HỖ TRỢ ĐỊNH DẠNG</strong>
+                <span>NHẠC 128KBPS</span>
+            </div>
+        </div>
+
+    </div>
 </header>
 
-<main id="home">
+
+<main>
+
 <section class="hero">
-  <div class="orb orb-left"></div><div class="orb orb-right"></div>
-  <div class="music-note note-1">♪</div><div class="music-note note-2">♫</div>
-  <div class="wrap hero-in">
-    <div class="eyebrow">♫ &nbsp; MP3 DOWNLOADER</div>
-    <h1>Tải nhạc <span>Zing MP3</span> miễn phí<br>nhanh &amp; đơn giản.</h1>
-    <p class="sub">Hỗ trợ tải nhạc từ link bài hát, album, playlist trên Zing MP3<br class="desktop"> với chất lượng cao, tốc độ nhanh, hoàn toàn miễn phí.</p>
-    <form id="searchForm" class="search">
-      <span class="search-icon">⌕</span>
-      <input id="url" type="url" required autocomplete="off" placeholder="Dán link bài hát, link album, playlist Zing MP3 vào đây..." aria-label="Link Zing MP3">
-      <button id="submit" type="submit">⌕ &nbsp; XÁC NHẬN</button>
-    </form>
-    <p class="example">Ví dụ: https://zingmp3.vn/bai-hat/... &nbsp; https://zingmp3.vn/album/... &nbsp; https://zingmp3.vn/playlist/...</p>
-    <p id="status" class="status"></p>
-  </div>
+
+    <div class="music-note note-left">♪</div>
+    <div class="music-note note-right">♫</div>
+
+    <div class="hero-content">
+
+        <h1>
+            Tải nhạc
+            <span>Zing MP3</span>
+            miễn phí,<br>
+            nhanh &amp; đơn giản.
+        </h1>
+
+        <p class="subtitle">
+            Hỗ trợ tìm link album · link bài hát · tên bài hát
+        </p>
+
+
+        <form id="searchForm" class="search-form">
+
+            <div class="input-wrapper">
+
+                <span class="link-icon">🔗</span>
+
+                <input
+                    id="url"
+                    type="text"
+                    placeholder="Dán link bài hát, link album, tên bài hát vào đây..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button
+                    id="pasteButton"
+                    type="button"
+                    class="paste-btn"
+                >
+                    📋 DÁN
+                </button>
+
+            </div>
+
+            <button
+                id="submit"
+                type="submit"
+                class="confirm-btn"
+            >
+                <span class="search-icon">⌕</span>
+                XÁC NHẬN
+            </button>
+
+        </form>
+
+        <div id="status" class="status"></div>
+
+        <section id="result" class="result-card" hidden>
+
+            <img id="cover" alt="Ảnh bài hát">
+
+            <div class="song-info">
+
+                <h2 id="title"></h2>
+
+                <p id="artist"></p>
+
+                <audio id="player" controls></audio>
+
+                <a
+                    id="download"
+                    class="download-button"
+                    href="#"
+                >
+                    ⬇ TẢI MP3 128KBPS
+                </a>
+
+            </div>
+
+        </section>
+
+        <section id="albumBox" class="album-box" hidden>
+
+            <div class="album-header">
+
+                <div>
+                    <span class="small-label">ALBUM / PLAYLIST</span>
+                    <h2 id="albumTitle"></h2>
+                </div>
+
+                <button
+                    id="selectAll"
+                    type="button"
+                    class="select-all-button"
+                >
+                    ☑ CHỌN TẤT CẢ
+                </button>
+
+            </div>
+
+            <div id="albumList" class="album-list"></div>
+
+            <button
+                id="downloadAll"
+                type="button"
+                class="download-all-button"
+            >
+                ⬇ TẢI TẤT CẢ
+            </button>
+
+        </section>
+
+        <div class="quality-text">
+            Tìm kiếm và tải nhạc chất lượng
+            <strong>128 kbps</strong>
+        </div>
+
+    </div>
+
 </section>
 
-<section class="wrap feature-grid" id="features">
-  <article><div class="feature-icon red">ϟ</div><h3>Tốc độ nhanh</h3><p>Xử lý và tải nhạc trong vài giây</p></article>
-  <article><div class="feature-icon blue">HD</div><h3>Chất lượng cao</h3><p>Hỗ trợ 128Kbps – 320Kbps</p></article>
-  <article><div class="feature-icon green">✓</div><h3>An toàn, bảo mật</h3><p>Không lưu trữ dữ liệu người dùng</p></article>
-  <article><div class="feature-icon purple">☁</div><h3>Hoàn toàn miễn phí</h3><p>Sử dụng không cần tài khoản</p></article>
+
+<section class="features">
+
+    <div class="feature-card feature-blue">
+        <div class="feature-icon">⚡</div>
+        <h3>Nhanh chóng</h3>
+        <p>Tải nhạc chỉ trong vài giây</p>
+    </div>
+
+    <div class="feature-card feature-purple">
+        <div class="feature-icon">✓</div>
+        <h3>Miễn phí</h3>
+        <p>Sử dụng hoàn toàn miễn phí</p>
+    </div>
+
+    <div class="feature-card feature-pink">
+        <div class="feature-icon">♪</div>
+        <h3>Chất lượng ổn định</h3>
+        <p>Hỗ trợ định dạng MP3 128kbps</p>
+    </div>
+
+    <div class="feature-card feature-green">
+        <div class="feature-icon">♥</div>
+        <h3>Dễ sử dụng</h3>
+        <p>Giao diện đơn giản, thân thiện</p>
+    </div>
+
 </section>
 
-<section class="wrap guide" id="guide">
-  <div class="section-heading"><h2>Hướng dẫn sử dụng</h2><p>Chỉ với 3 bước đơn giản để tải nhạc từ Zing MP3</p></div>
-  <div class="steps">
-    <article class="step"><span class="number">1</span><div class="step-icon">↗</div><h3>Sao chép link</h3><p>Sao chép link bài hát, album hoặc playlist trên Zing MP3</p></article>
-    <div class="arrow">›</div>
-    <article class="step"><span class="number">2</span><div class="step-icon">⌕</div><h3>Dán link và xác nhận</h3><p>Dán link vào ô tìm kiếm và nhấn Xác nhận</p></article>
-    <div class="arrow">›</div>
-    <article class="step"><span class="number">3</span><div class="step-icon">↓</div><h3>Tải nhạc về máy</h3><p>Chọn chất lượng phù hợp và tải nhạc về thiết bị của bạn</p></article>
-  </div>
+
+<section class="service-section">
+
+    <div class="service-box">
+
+        <div class="service-icon">i</div>
+
+        <h2>Thông tin dịch vụ</h2>
+
+        <p>
+            Trang web được phát triển dựa trên API của bên thứ ba.
+            Chúng tôi không lưu trữ nội dung âm thanh và không chịu trách nhiệm
+            về nội dung hoặc vấn đề bản quyền của các tài liệu được cung cấp.
+            Người dùng tự chịu trách nhiệm đảm bảo quyền sử dụng đối với nội dung
+            được truy cập hoặc tải xuống.
+        </p>
+
+    </div>
+
 </section>
 
-<section class="wrap result-section" id="result" hidden>
-  <div class="result-card">
-    <div class="cover"><img id="cover" alt="Ảnh bìa bài hát"></div>
-    <div class="info"><small>BÀI HÁT</small><h2 id="title">—</h2><p id="artist">—</p><div class="meta"><span>MP3</span><span>128 kbps</span></div><div class="actions"><audio id="player" controls preload="none"></audio><a id="download" class="download" href="#" download>TẢI MP3 ↓</a></div></div>
-  </div>
-</section>
-
-<section class="wrap notice" id="about">
-  <div class="notice-icon">i</div><div><h2>Thông tin dịch vụ</h2><p>Trang web được phát triển dựa trên API của bên thứ ba. Chúng tôi không lưu trữ nội dung âm thanh và không chịu trách nhiệm về nội dung hoặc vấn đề bản quyền của các tài liệu được cung cấp. Người dùng tự chịu trách nhiệm đảm bảo quyền sử dụng đối với nội dung được truy cập hoặc tải xuống.</p></div>
-</section>
-
-<section class="wrap stats">
-  <div><span class="stat-icon red">♫</span><div><strong>10M+</strong><small>Bài hát được hỗ trợ</small></div></div>
-  <div><span class="stat-icon blue">♧</span><div><strong>500K+</strong><small>Người dùng tin tưởng</small></div></div>
-  <div><span class="stat-icon green">☁</span><div><strong>99.9%</strong><small>Thời gian hoạt động</small></div></div>
-  <div><span class="stat-icon purple">♡</span><div><strong>Miễn phí</strong><small>Luôn luôn như vậy</small></div></div>
-</section>
 </main>
 
-<footer>
-  <div class="wrap footer-in">
-    <div class="footer-brand"><a class="brand" href="/"><span class="logo">Z</span><span>Zing<span>Download</span></span></a><p>Công cụ tải nhạc Zing MP3 miễn phí, nhanh chóng và tiện lợi.</p><p>© 2026 ZingDownload · Developed by <b>Minh Dev</b></p></div>
-    <div class="footer-right"><nav><a href="#home">Trang chủ</a><a href="#features">Tính năng</a><a href="#guide">Hướng dẫn</a><a href="#about">Giới thiệu</a><a href="#about">Liên hệ</a></nav><p>Nghe nhạc mọi lúc, mọi nơi <b>♥</b></p></div>
-  </div>
+
+<footer class="footer">
+
+    <p>
+        © 2026 ZINGDL.IO.VN · Developed by <strong>Minh Dev</strong>
+    </p>
+
 </footer>
-<script src="assets/app.js?v=3"></script>
+
+
+
+
+
+<script src="/assets/app.js?v=20260911g"></script>
 </body>
 </html>

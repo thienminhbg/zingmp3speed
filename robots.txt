@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zingdl.io.vn/sitemap.xml
